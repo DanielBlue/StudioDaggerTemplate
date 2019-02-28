@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<template
+    format="5"
+    revision="7"
+    name="New Mvp Module"
+    minApi="7"
+    minBuildApi="14"
+    description="Creates Mvp Template">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="className"
+        name="类名"
+        type="string"
+        constraints="class|unique|nonempty"
+		help="不需要带Activity或者Fragment"
+		/>
+		
+	<parameter
+        id="dirName"
+        name="包名"
+        type="string"
+		help="module包下的包名,二级包名直接用.连接"		/>
+  
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+		
+	<parameter
+        id="isActivity"
+        name="是否Activity"
+        type="boolean"
+        default="true"
+        help="不勾选则生成Fragment" />
+		
+	<parameter
+        id="isToolbar"
+        name="是否Toolbar"
+        type="boolean"
+        default="false"
+        help="勾选则集成ToolbarActivity" />
+		
+	<parameter
+        id="generateLayout"
+        name="是否生成布局文件"
+        type="boolean"
+        default="true" />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_vp_with_tab_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
