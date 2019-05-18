@@ -3,9 +3,11 @@
 
     <application>
 	<#if dirName?trim?length gt 1>
-		<activity android:name="${packageName}.module.${dirName}.${className}Activity"/>
+		<activity android:name="${packageName}.module.${dirName}.${className}Activity"
+				  android:screenOrientation="portrait"/>
 	<#else>
-		<activity android:name="${packageName}.module.${className}Activity"/>
+		<activity android:name="${packageName}.module.${className}Activity"
+		          android:screenOrientation="portrait"/>
 	</#if>
         
     </application>
